@@ -683,3 +683,96 @@ void StringProg::nextPermutation(vector<int>& nums){
 	sort(nums.begin() + mark + 1, nums.end());
 }
 
+string StringProg::minWindow(string s, string t){
+	if (s.length() < t.length())
+		return "";
+	vector<int> table(128, 0);
+	for (auto c : t){
+		table[c] ++;
+	}
+	int counter = t.size();
+	int start = 0, end = 0;
+	int min = INT_MAX;
+	int minStart = 0;
+	string result = "";
+	while (end < s.length()){
+		if (table[s[end]] > 0)
+			counter--;
+		table[s[end]]--;
+		end++;
+		while (counter == 0){
+			if (end - start < min){
+				min = end - start;
+				minStart = start;
+			}
+			table[s[start]] ++;
+			if (table[s[start]] > 0)
+				counter++;
+			start++;
+		}
+	}
+	if (min == INT_MAX)
+		min = 0;
+	return s.substr(minStart, min);
+}
+
+void StringProg::generatePermutation(vector<int>& nums, vector<int>& temp, vector<vector<int>>& result){
+	if (nums.size() == 0){
+		result.push_back(temp);
+		return;
+	}
+	for (int i = 0; i < nums.size(); i++){
+		if (i > 0 && nums[i] == nums[i - 1])
+			continue;
+		temp.push_back(nums[i]);
+		vector<int> tmp = nums;
+		tmp.erase(tmp.begin() + i);
+		generatePermutation(tmp, temp, result);
+		temp.pop_back();
+	}
+}
+
+vector<vector<int>> StringProg::permuteUnique(vector<int>& nums) {
+	vector<vector<int>> result;
+	if (nums.size() == 0)
+		return result;
+	sort(nums.begin(), nums.end());
+	vector<int> temp;
+	generatePermutation(nums, temp, result);
+	return result;
+}
+
+int StringProg::difference(int a, int b){
+	return (a < b ? (b - a) : (a - b));
+}
+
+int StringProg::threeSumClosest(vector<int>& nums, int target){
+	if (nums.size() <= 2)
+		return 0;
+	if (nums.size() == 3)
+		return nums[0] + nums[1] + nums[2];
+	sort(nums.begin(), nums.end());
+	int minDif = INT_MAX;
+	int closestSum = INT_MAX;
+	for (int i = 0; i <= nums.size() - 2; i++){
+		int j = i + 1;
+		int k = nums.size()-1;
+		while (j < k){
+			int currSum = nums[i] + nums[j] + nums[k];
+			if (currSum == target)
+				return target;
+			int diff = difference(currSum, target);
+			if (diff <= minDif){
+				minDif = diff;
+				closestSum = currSum;
+			}
+			if (currSum < target){
+				do { j++; } while (j < k && nums[j] == nums[j - 1]);
+			}
+			else{
+				do { k--; } while (j < k && nums[k] == nums[k + 1]);
+			}
+		}
+	}
+	return closestSum;
+}

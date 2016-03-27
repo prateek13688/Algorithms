@@ -48,6 +48,11 @@ class StringProg
 		string getPermutation(int n, int k);
 		void StringProg::gameOfLife(vector<vector<int>>& board);
 		void nextPermutation(vector<int>&);
+		string minWindow(string, string);
+		void generatePermutation(vector<int>&, vector<int>&, vector<vector<int>>&);
+		vector<vector<int>> permuteUnique(vector<int>&);
+		int threeSumClosest(vector<int>&, int);
+		int	difference(int, int);
 	protected:
     private:
 };
