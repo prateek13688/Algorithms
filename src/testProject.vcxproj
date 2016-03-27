@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7691E6C0-61AE-4DD8-822A-5CF82F51789F}</ProjectGuid>
+    <RootNamespace>testProject</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ArrayProg.h" />
+    <ClInclude Include="BitManipulation.h" />
+    <ClInclude Include="callCenter.h" />
+    <ClInclude Include="CallHandler.h" />
+    <ClInclude Include="CardClass.h" />
+    <ClInclude Include="child1C.h" />
+    <ClInclude Include="CustomeHashTable.h" />
+    <ClInclude Include="CustomPointer.h" />
+    <ClInclude Include="demo.h" />
+    <ClInclude Include="demo1.h" />
+    <ClInclude Include="demoClass.h" />
+    <ClInclude Include="Employee.h" />
+    <ClInclude Include="LRUAdv.h" />
+    <ClInclude Include="LRUCache.h" />
+    <ClInclude Include="Oragnization.h" />
+    <ClInclude Include="parent1C.h" />
+    <ClInclude Include="SingleList.h" />
+    <ClInclude Include="StackProg.h" />
+    <ClInclude Include="StringProg.h" />
+    <ClInclude Include="ThreadDemo.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="TreeProg.h" />
+    <ClInclude Include="unorderedAnagrams.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArrayProg.cpp" />
+    <ClCompile Include="BitManipulation.cpp" />
+    <ClCompile Include="callCenter.cpp" />
+    <ClCompile Include="CallHandler.cpp" />
+    <ClCompile Include="CardClass.cpp" />
+    <ClCompile Include="child1C.cpp" />
+    <ClCompile Include="CustomeHashTable.cpp" />
+    <ClCompile Include="CustomPointer.cpp" />
+    <ClCompile Include="demo.cpp" />
+    <ClCompile Include="demo1.cpp" />
+    <ClCompile Include="demoClass.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="LRUAdv.cpp" />
+    <ClCompile Include="LRUCache.cpp" />
+    <ClCompile Include="Oragnization.cpp" />
+    <ClCompile Include="parent1C.cpp" />
+    <ClCompile Include="SingleList.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="StringProg.cpp" />
+    <ClCompile Include="ThreadDemo.cpp" />
+    <ClCompile Include="Tree.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
